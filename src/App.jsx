@@ -6,6 +6,8 @@ import { Services } from './pages/Services';
 import { Register } from './pages/Register';
 import { Login } from './pages/Login';
 import {Navbar} from './components/Navbar';
+import {Footer} from './components/Footer';
+import '../src/index.css'
 
 const App =()=>{
   return (<>
@@ -19,6 +21,7 @@ const App =()=>{
     <Route path="/register" element = {<Register/>}/>
     <Route path="/login" element = {<Login/>}/>
   </Routes>
+  <Footer/>
   </BrowserRouter>
   </>)
 };
