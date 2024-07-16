@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../store/auth";
 export const Register =()=>{
 
 const [user, setUser] = useState({
@@ -8,6 +9,10 @@ const [user, setUser] = useState({
     phone:"",
     password:"",
 });
+
+const navigate = useNavigate();
+
+const {storetokenInLS} = useAuth();
 
 const handleInput=(e)=>{
     console.log(e);
@@ -20,9 +25,34 @@ const handleInput=(e)=>{
     })
 }
 
-const handleSubmit=(e)=>{
-    e.prevertDefault();
-    alert(user);
+const handleSubmit= async (e)=>{
+    e.preventDefault();
+    console.log(JSON.stringify(user));
+    try
+    {
+        const response = await fetch('http://localhost:5000/api/auth/register',{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+        },
+        body:JSON.stringify(user),
+    });
+    if (response.ok){
+        const res_data = await response.json();
+        console.log("res from server", res_data);
+        storetokenInLS(res_data.token);
+        setUser({username:"",
+            email:"",
+            phone:"",
+            password:""});
+            navigate("/login");
+    }
+
+    console.log(response)
+}
+catch(error){
+    console.log("register", error);
+}
 };
 
     return <>
