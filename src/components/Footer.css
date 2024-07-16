@@ -1,0 +1,26 @@
+.footer {
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.footer a {
+    color: #195e71;
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
