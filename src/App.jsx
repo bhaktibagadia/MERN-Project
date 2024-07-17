@@ -8,6 +8,8 @@ import { Login } from './pages/Login';
 import {Navbar} from './components/Navbar';
 import {Error} from './pages/Error';
 import {Footer} from './components/Footer';
+import {Logout} from './pages/Logout';
+import { useAuth } from './store/auth';
 import '../src/index.css'
 
 const App =()=>{
@@ -19,6 +21,7 @@ const App =()=>{
     <Route path="/about" element = {<About/>}/>
     <Route path="/contact" element = {<Contact/>}/>
     <Route path="/services" element = {<Services/>}/>
+    <Route path='/logout' element = {<Logout/>}/>
     <Route path="/register" element = {<Register/>}/>
     <Route path="/login" element = {<Login/>}/>
     <Route path='*' element={<Error/>}/>
