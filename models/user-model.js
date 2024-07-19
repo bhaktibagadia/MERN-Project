@@ -22,7 +22,23 @@ const userSchema = new mongoose.Schema({
     isAdmin:{
         type: Boolean,
         default: false,
-    }
+    },
+    name:{
+        type: String,
+        require: true,
+    },
+    location:{
+        type: String,
+        require: true,
+    },
+    bloodGroup:{
+        type: String,
+        require: true,
+    },
+    isFitToDonate:{
+        type: Boolean
+    },
+
 });
 
 // secure password using bcrypt

@@ -42,7 +42,8 @@ export const Login = () => {
                 storetokenInLS(res_data.token);
                 setUser({ email: "", password: "" });
                 console.log(res_data); // For debugging
-                navigate("/");
+                navigate("/additional-info");
+                // navigate("/");
             } else {
                 const errorData = await response.json();
                 alert(errorData.message);

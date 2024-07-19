@@ -5,11 +5,13 @@ const authRoute=require("./router/auth-router");
 const connectDb=require('./utils/db');
 const errorMiddleware = require('./middlewares/error-middleware');
 const contactRoute = require('./router/contact-router');
+const additionalRoute = require('./router/user-router');
 
 // middleware responsible to parse json data in request body
 app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use("/api/form", contactRoute);
+app.use('user/form', additionalRoute);
 
 app.use(errorMiddleware);
 
