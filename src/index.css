@@ -1,28 +1,36 @@
-*{
+/* index.css */
+:root {
+  --primary-color: #1a1a2e;
+  --secondary-color: #e94560;
+  --light-color: #ffffff;
+  --bg-color: #0f0f1a;
+  --btn-bg-color: #e94560;
+  --btn-bg-hover-color: #e60023;
+  --border-color: #2c2c54;
+}
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Urbanist, system-ui, Avenir, Arial, Helvetica, sans-serif;
+  font-family: 'Urbanist', system-ui, Avenir, Arial, Helvetica, sans-serif;
   color-scheme: light dark;
 }
 
-:root{
-  --bg-color: #f4f3ff;
-  --btn-color: #646cff;
-  --dark-color: #242424;
-  --helper-color: #99b9ff;
-}
-html{
+html {
   font-size: 62.5%;
 }
-body{
+
+body {
   margin: 0;
   min-width: 32rem;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--light-color);
 }
 
-h1{
-  font-size: 10rem;
+h1 {
+  font-size: 4rem;
   line-height: 1.1;
   font-weight: bold;
 }
@@ -31,91 +39,95 @@ p,
 li,
 label,
 input,
-textarea{
+textarea {
   font-size: 1.8rem;
   line-height: 1.56;
   letter-spacing: 0.1rem;
   word-spacing: 0.06rem;
 }
 
-a{
+a {
   font-weight: 500;
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
-  color: var(--btn-color);
+  color: var(--secondary-color);
   text-decoration: inherit;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.container{
-  max-width: 140rem;
-  padding: 4rem 2.4rem;
+.container {
+  max-width: 120rem;
+  padding: 2rem 1.5rem;
   margin: 0 auto;
 }
 
-.grid{
+.grid {
   display: grid;
   gap: 6.4rem;
 }
 
-.grid-two-cols{
-  grid-template-columns: repear(2, 1fr);
+.grid-two-cols {
+  grid-template-columns: 1fr 1fr;
 }
 
-.grid-four-cols{
+.grid-four-cols {
   grid-template-columns: repeat(4, 1fr);
 }
 
-button{
+button {
   text-transform: capitalize;
   padding: 1rem 2rem;
   font-size: 1.7rem;
   font-weight: 500;
-  background-color: var(--btn-color);
+  background-color: var(--btn-bg-color);
+  color: var(--light-color);
   border-radius: 0.8rem;
   border: 0.1rem solid transparent;
   cursor: pointer;
   letter-spacing: 0.1rem;
-  transition: border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.secondary-btn{
+.secondary-btn {
   background-color: transparent;
-  box-shadow: inset 0 0 0 0.2rem var(--btn-color);
-  margin-left: 3.2rem;
+  color: var(--btn-bg-color);
+  border: 0.2rem solid var(--btn-bg-color);
+  margin-left: 3rem;
 }
 
-button :hover{
-  box-shadow: inset 0 0 0 0.2rem var(--bg-color);
+button:hover {
+  background-color: var(--btn-bg-hover-color);
 }
 
-a :hover{
-  a.active{
-    color: #646cff;
-  }
+.secondary-btn:hover {
+  background-color: var(--btn-bg-color);
+  color: var(--light-color);
 }
 
-.section-hero{
-  & .grid{
+.section-hero {
+  padding: 5rem 0;
+
+  & .grid {
     align-items: center;
   }
-  .hero-content{
-    & p{
+
+  .hero-content {
+    & p {
       margin: 2.4rem 0 4.8rem 0;
-      & :first-child{
+
+      & :first-child {
         margin: 0 0 1.2rem 0;
       }
     }
   }
 
-.hero-image{
-  display: flex;
-  justify-content: center;
-}
-
+  .hero-image {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .section-analytics {
@@ -125,21 +137,20 @@ a :hover{
     background-color: var(--bg-color);
     border-radius: 1rem;
     padding: 2rem;
+    border: 0.2rem solid var(--border-color);
   }
 
   .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 2rem; 
-    color: var(--dark-color);
+    gap: 2rem;
+    color: var(--light-color);
   }
 
   .div1 {
     text-align: center;
-    border-right: 0.2rem solid var(--dark-color);
+    border-right: 0.2rem solid var(--border-color);
 
     &:last-child {
-      border: none; 
+      border: none;
     }
 
     h2 {
@@ -148,49 +159,108 @@ a :hover{
     }
 
     p {
-      font-size: 1.6rem; 
+      font-size: 1.6rem;
     }
   }
 }
 
-.section-contact{
-  & .contact-content{
-    padding: 0;
-
-    & h1{
-      margin-bottom: 3.2rem;
-    }
-  }
-  & .container{
-    padding-top: 3.2rem;
-  }
-  & .contact-img{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-     & img{
-      width: 80%;
-      height: auto;
-     }
-  }
-
-  & .section-form{
-    & form{
-      display: flex;
-      flex-direction: column;
-      gap: 3.2rem;
-    }
-    & label{
-      display: block;
-      margin-bottom: 1.2rem;
-    }
-    & input, 
-    textarea{
-      width: 80%;
-      padding: 0.2rem 0.6rem;
-    }
-  }
+.section-contact {
+  background-color: var(--dark-bg-color);
+  color: var(--light-text-color);
+  padding: 4rem 2.4rem;
 }
+
+.contact-content {
+  text-align: center;
+  padding: 0;
+}
+
+.contact-content h1 {
+  font-size: 3.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.container {
+  display: grid;
+  gap: 4rem;
+  margin: 0 auto;
+}
+
+.contact-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.8rem;
+}
+
+.section-form {
+  background-color: var(--light-bg-color);
+  padding: 2.4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.section-form label {
+  font-size: 1.8rem;
+  color: var(--dark-text-color);
+  margin-bottom: 1.2rem;
+}
+
+.section-form input,
+.section-form textarea {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: var(--bg-input-color);
+  color: var(--text-input-color);
+  border: 0.1rem solid var(--border-color);
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+}
+
+.section-form textarea {
+  resize: vertical;
+}
+
+.section-form button {
+  background-color: var(--btn-color);
+  color: var(--light-text-color);
+  border: none;
+  padding: 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.section-form button:hover {
+  background-color: var(--btn-hover-color);
+}
+
+section.mb-3 {
+  margin-top: 4rem;
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 0.8rem;
+}
+
+
 #error-page {
   display: flex;
   align-items: center;
@@ -209,97 +279,68 @@ a :hover{
   line-height: 1em;
   animation: animate 10s ease-in-out infinite;
   background: -webkit-repeating-linear-gradient(
-    #71b7e6,
-    var(--btn-color)
+    var(--primary-color),
+    var(--secondary-color),
     #b98acc,
     #ee8176,
     #b98acc,
-    var(--btn-color),
-    #9b59b6
+    var(--secondary-color),
+    var(--primary-color)
   );
   background-size: 500%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
   position: relative;
-  margin: 0; /* Remove default margin */
 }
 
-.content h4 {
-  font-size: 1.5rem;
-  color: #333; /* Dark color for better contrast */
-  margin: 1rem 0; /* Add some margin for spacing */
-}
-
+.content h4,
 .content p {
-  font-size: 1rem;
-  color: #666; /* Slightly lighter color for the text */
-  margin: 1rem 0 2rem; /* Add some margin for spacing */
-}
-
-.btns {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  color: var(--light-color);
 }
 
 .btns a {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  background-color: var(--btn-bg-color);
 }
 
 .btns a:hover {
-  background-color: darken(var(--btn-color, #3498db), 10%);
+  background-color: var(--btn-bg-hover-color);
 }
 
-@keyframes animate {
-  0% {
-    background-position: 0 0;
-  }
-  25% {
-    background-position: 100% 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  75% {
-    background-position: 0% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
-.section-registration{
+.section-registration {
   padding: 3.2rem;
 
-  & .container{
-    padding-top: 3.2rem;
+  &.grid{
+    align-items: center;
+  }
+
+  & .container {
+    /* padding-top: 3.2rem; */
     align-items: center;
 
-    & img{
-      width: 80%;
+    & img {
+      width: 100%;
       height: auto;
     }
   }
 
-  & .registration-form{
-    & label{
+  & .registration-form {
+    & label {
       display: block;
       margin: 2.4rem 0 0.8rem 0;
       text-transform: capitalize;
     }
-    & input{
+
+    & input {
       width: 80%;
       padding: 0.6rem 0.6rem;
+      background-color: var(--bg-color);
+      color: var(--light-color);
+      border: 0.1rem solid var(--border-color);
+      border-radius: 0.4rem;
     }
-    & button{
+
+    & button {
       margin-top: 3.2rem;
     }
   }

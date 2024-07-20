@@ -6,9 +6,9 @@ export const Home =()=>{
         <section className="section-hero">
             <div className="container grid grid-two-cols">
                 <div className="hero-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <h1>Lorem ipsum dolor sit amet.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At officiis iure similique, inventore enim aliquid quis autem nesciunt aliquam non necessitatibus aperiam cupiditate eveniet ab iste quas ex. Veniam ipsa aspernatur sit quod saepe reiciendis ipsam odit nam laudantium optio.</p>
+                    <p>Join our community of lifesavers and make a difference today.</p>
+                    <h1>Donate Blood, Save Lives</h1>
+                    <p>Your blood donation can save up to three lives. Join us in our mission to provide safe and sufficient blood supplies to those in need. Every drop counts, and together, we can make a significant impact on countless lives.</p>
                     <div className="btn btn-group">
                         <a href="/contact">
                         <button className="btn">Connect Now</button>
@@ -19,7 +19,7 @@ export const Home =()=>{
                     </div>
                 </div>
                 <div className="hero-image">
-                    <img src="/images/home.jpg" alt="" width="400" height="500"/>
+                    <img src="/images/home.png" alt="Blood Donation" width="400" height="500"/>
                 </div>
             </div>
         </section>
@@ -29,19 +29,19 @@ export const Home =()=>{
         <div className="container grid grid-four-cols">
             <div className="div1">
                 <h2>50+</h2>
-                <p>Registered Companies</p>
+                <p>Registered Hospitals</p>
             </div>
             <div className="div1">
-                <h2>10000+</h2>
-                <p>Happy Clients</p>
+                <h2>10,000+</h2>
+                <p>Happy Donors</p>
             </div>
             <div className="div1">
-                <h2>10000+</h2>
-                <p>Happy Clients</p>
+                <h2>15,000+</h2>
+                <p>Lives Saved</p>
             </div>
             <div className="div1">
-                <h2>10000+</h2>
-                <p>Happy Clients</p>
+                <h2>5,000+</h2>
+                <p>Volunteers</p>
             </div>
         </div>
     </section>
@@ -49,12 +49,12 @@ export const Home =()=>{
     <section className="section-hero">
             <div className="container grid grid-two-cols">
             <div className="hero-image">
-                    <img src="/images/home2.jpg" alt="" width="400" height="500"/>
+                    <img src="/images/home2.png" alt="Blood Donation Drive" width="700" height="500"/>
                 </div>
                 <div className="hero-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    <h1>Lorem ipsum dolor sit amet.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At officiis iure similique, inventore enim aliquid quis autem nesciunt aliquam non necessitatibus aperiam cupiditate eveniet ab iste quas ex. Veniam ipsa aspernatur sit quod saepe reiciendis ipsam odit nam laudantium optio.</p>
+                    <p>Be a hero today, donate blood and save lives.</p>
+                    <h1>Your Donation Matters</h1>
+                    <p>By registering on our platform, you become part of a noble cause. After logging in, you can confirm your willingness to donate blood through a simple form. Our dedicated team will contact you whenever there is a need for your blood type, ensuring timely help for those in critical need.</p>
                     <div className="btn btn-group">
                         <a href="/contact">
                         <button className="btn">Connect Now</button>

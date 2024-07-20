@@ -61,7 +61,7 @@ export const Contact = () => {
                 </div>
                 <div className="container grid grid-two-cols">
                     <div className="contact-img">
-                        <img src="/images/contact.avif" alt="" />
+                        <img src="/images/contact.jpg" alt="" width="600" height="600"/>
                     </div>
 
                     <div className="section-form">

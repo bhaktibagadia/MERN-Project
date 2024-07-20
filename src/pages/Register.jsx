@@ -61,7 +61,7 @@ catch(error){
             <div className="section-registration">
                 <div className="container grid grid-two-cols">
                     <div className="registration-image">
-                        <img src="/images/registration.jpg" alt="" width="500" height="500" />
+                        <img src="/images/registration.png" alt="" width="500" height="500" />
                     </div>
 
                     <div className="registration-form">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuth } from "../store/auth";
+import "./AdditionalInfo.css";
 
 const URL = "http://localhost:5000/user/form/update-info";
 
