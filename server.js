@@ -7,6 +7,7 @@ const connectDb=require('./utils/db');
 const errorMiddleware = require('./middlewares/error-middleware');
 const contactRoute = require('./router/contact-router');
 const additionalRoute = require("./router/user-router");
+const adminRoute = require("./router/admin-router");
 
 
 // handling cors
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use("/api/form", contactRoute);
 app.use('/user/form', additionalRoute);
+app.use("/api/admin", adminRoute);
 
 app.use(errorMiddleware);
 
