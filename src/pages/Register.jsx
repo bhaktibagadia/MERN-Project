@@ -37,9 +37,12 @@ const handleSubmit= async (e)=>{
         },
         body:JSON.stringify(user),
     });
+    // console.log(response)
+    
+    const res_data = await response.json();
+    console.log("res from server", res_data.extraDetails);
+
     if (response.ok){
-        const res_data = await response.json();
-        console.log("res from server", res_data);
         storetokenInLS(res_data.token);
         setUser({username:"",
             email:"",
@@ -47,8 +50,9 @@ const handleSubmit= async (e)=>{
             password:""});
             navigate("/login");
     }
-
-    console.log(response)
+    else{
+        alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
+    }
 }
 catch(error){
     console.log("register", error);

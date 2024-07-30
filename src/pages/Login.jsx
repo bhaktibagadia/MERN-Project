@@ -35,18 +35,17 @@ export const Login = () => {
             });
 
             console.log("login form", response);
-
+            const res_data = await response.json();
             if (response.ok) {
                 alert("Login Successful");
-                const res_data = await response.json();
+
                 storetokenInLS(res_data.token);
                 setUser({ email: "", password: "" });
                 console.log(res_data); // For debugging
                 navigate("/additional-info");
                 // navigate("/");
             } else {
-                const errorData = await response.json();
-                alert(errorData.message);
+                alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
             }
         } catch (error) {
             console.log(error);

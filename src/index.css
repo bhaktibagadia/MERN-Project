@@ -77,35 +77,47 @@ li {
   grid-template-columns: repeat(4, 1fr);
 }
 
-button {
-  text-transform: capitalize;
-  padding: 1rem 2rem;
-  font-size: 1.7rem;
-  font-weight: 500;
-  background-color: var(--btn-bg-color);
-  color: var(--light-color);
+/* General Button Styles */
+.btn {
+  display: inline-block;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
   border-radius: 0.8rem;
-  border: 0.1rem solid transparent;
-  cursor: pointer;
-  letter-spacing: 0.1rem;
-  transition: background-color 0.3s, border-color 0.3s;
+  border: 0.2rem solid transparent;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.btn-group a {
+  text-decoration: none;
 }
 
 .secondary-btn {
   background-color: transparent;
-  color: var(--btn-bg-color);
-  border: 0.2rem solid var(--btn-bg-color);
-  margin-left: 3rem;
-}
-
-button:hover {
-  background-color: var(--btn-bg-hover-color);
+  color: #ff6b6b;
+  border-color: #ff6b6b;
 }
 
 .secondary-btn:hover {
-  background-color: var(--btn-bg-color);
-  color: var(--light-color);
+  background-color: #ff6b6b;
+  color: #ffffff;
+  border-color: #ff6b6b;
+  transform: translateY(-0.2rem);
 }
+
+/* Dark Theme Variables */
+:root {
+  --btn-color: #fc4141; /* Primary button background color */
+  --btn-hover-color: #ff6b6b; /* Primary button hover color */
+  --light-text-color: #ffffff; 
+}
+
 
 .section-hero {
   padding: 5rem 0;
@@ -147,7 +159,7 @@ button:hover {
 
   .div1 {
     text-align: center;
-    border-right: 0.2rem solid var(--border-color);
+    /* border-right: 0.2rem solid var(--border-color); */
 
     &:last-child {
       border: none;
@@ -345,3 +357,166 @@ iframe {
     }
   }
 }
+.admin-users-section {
+  padding: 2rem 0;
+  background-color: var(--bg-color);
+  color: var(--light-color);
+}
+
+.admin-users-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--card-bg-color);
+  border-radius: 0.8rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.admin-users-section h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.admin-users-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.admin-users-section th,
+.admin-users-section td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 0.1rem solid var(--border-color);
+}
+
+.admin-users-section th {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  text-transform: uppercase;
+}
+
+.admin-users-section td {
+  background-color: var(--bg-color);
+  color: var(--light-color);
+}
+
+.admin-users-section td:last-child,
+.admin-users-section th:last-child {
+  text-align: center;
+}
+
+.admin-users-section .btn {
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid var(--btn-border-color);
+  border-radius: 0.4rem;
+  background-color: var(--btn-color);
+  color: var(--light-color);
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.admin-users-section .btn:hover {
+  background-color: var(--btn-hover-color);
+  border-color: var(--btn-hover-border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-users-section th,
+  .admin-users-section td {
+    padding: 0.5rem;
+  }
+
+  .admin-users-section table {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-users-section th,
+  .admin-users-section td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-users-section th {
+    display: none;
+  }
+
+  .admin-users-section td {
+    padding: 1rem 0;
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .admin-users-section td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .admin-users-section table {
+    border: 0;
+  }
+
+  .admin-users-section td:last-child {
+    text-align: left;
+  }
+}
+.services-page {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+.services-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ff4c4c;
+}
+
+.services-page .intro {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.services-page .service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.services-page .service-item {
+  background-color: #262626;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.services-page .service-item h2 {
+  font-size: 2rem;
+  color: #ff4c4c;
+  margin-bottom: 1rem;
+}
+
+.services-page .service-item p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-page .service-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+

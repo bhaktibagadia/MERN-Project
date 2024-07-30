@@ -13,6 +13,10 @@ import { Footer } from './components/Footer';
 import { Logout } from './pages/Logout';
 import { AuthProvider } from './store/auth';
 import '../src/index.css';
+import { AdminLayout } from './components/layouts/Admin-Layout';
+import { AdminUsers } from './pages/Admin-Users';
+import { AdminContacts } from './pages/Admin-Contacts';
+import {AdminAdditionalInformation} from './pages/Admin-AdditionalInformation';
 
 const App = () => {
   return (
@@ -27,9 +31,13 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path='/additional-info' element={<AdditionalInfo/>}/> */}
           <Route path="/additional-info" element={<ProtectedRoute><AdditionalInfo /></ProtectedRoute>} />
           <Route path="*" element={<Error />} />
+          <Route path='/admin' element={<AdminLayout/>}>
+              <Route path='users' element={<AdminUsers/>}/>
+              <Route path='contacts' element={<AdminContacts/>}/>
+              <Route path='additionalInformation' element={<AdminAdditionalInformation/>}/>
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>
